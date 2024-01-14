@@ -58,19 +58,28 @@ $hotel_list = [
 
     <h1>Hotel</h1>
 
-    <?php foreach ($hotel_list as $hotel) {
-        echo '<tr>';
-        echo '<td>' . $hotel['name'] . '</td>';
-        echo '<td>' . $hotel['description'] . '</td>';
-        echo '<td>' . ($hotel['parking'] ? 'Sì' : 'No') . '</td>';
-        echo '<td>' . $hotel['vote'] . '</td>';
-        echo '<td>' . $hotel['distance_to_center'] . ' km</td>';
-        echo '</tr>';
-    }
-    ?>
+    <?php foreach ($hotel_list as $hotel) : ?>
+        <li>
+            <h2><?php echo $hotel_list['name']; ?></h2>
+            <div><?php echo $hotel['description']; ?></div>
+            <div>Parking: <?php echo $hotel['parking'] ? 'Si' : 'No'; ?></div>
+            <div>Vote: <?php echo $hotel['vote']; ?></div>
+            <div>Distance: <?php echo $hotel['distance_to_center']; ?> km</div>
+        </li>
+    <?php endforeach; ?>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Parking</th>
+                <th scope="col">Vote</th>
+                <th scope="col">Distance</th>
+            </tr>
+        </thead>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
 </html>
